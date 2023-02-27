@@ -42,19 +42,25 @@ const waitFetch = ()=>{
   
   */
   const [pokemons, setPokemons] = useState([])
-  const {data, error, isLoading} = useFetch('https://pokeapi.co/api/v2/pokemon/')
+  
+ // const {data, error, isLoading} = useFetch('https://pokeapi.co/api/v2/pokemon/')
+ const {data, error, isLoading} = useFetch(`https://pokeapi.co/api/v2/pokemon/`)
 
-  let arr = []
-  const waitFetch = ()=>{
+  
+  
+  const waitFetch =async ()=>{
+    let arr = []
     if (data){
     for (let i=0;i<20;i++){
       arr.push(data.results[i]) 
-      setPokemons(arr)
+      setPokemons(arr) 
       }
-    }
-  }
-  setTimeout(waitFetch, 100)
-    
+    }  
+  } 
+  
+  
+   setTimeout(waitFetch, 100);
+  
   
   if (isLoading) return <p>loading</p>;
   if (error) return <p>error</p>
@@ -63,15 +69,11 @@ const waitFetch = ()=>{
 
 return (
   <div>
-    <button onClick={()=>console.log(data)}>clic</button>
+    <button onClick={()=>console.log(pokemons)}>clic</button>
     
     
     
-    {(pokemons.map((pokemon)=>(
-      <div key={pokemon.name}> 
-        <p>{pokemon.name}</p>
-      </div>
-    )))}
+    <PokemonList pokemons={pokemons}/>
   </div>
 )
  

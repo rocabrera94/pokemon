@@ -1,15 +1,10 @@
 import React from 'react'
 
-const PokemonCard = ({names}) => {
+const PokemonCard = ({pokemon}) => {
   return (
   
     <div>
-      <button onClick={()=>console.log(names)}>clickme</button>
-        <div>
-          {names.map((name)=>(
-           <p key={name}>{name}</p> 
-          ))}
-        </div>
+      <p>{pokemon.name}</p>
     </div>)
  
   
