@@ -69,6 +69,7 @@ const waitFetch = ()=>{
 
 return (
   <div>
+    <h1>Pokemons</h1>
     <button onClick={()=>console.log(pokemons)}>clic</button>
     
     

@@ -1,0 +1,11 @@
+.pokemon-container{
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 10rem;
+    height: 10rem;
+}
+
+.pokemon-name{
+    font-size: 1rem;
+    font-weight: 300;
+}

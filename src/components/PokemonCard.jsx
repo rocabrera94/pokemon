@@ -1,10 +1,10 @@
 import React from 'react'
-
+import '../styles/PokemonCard.css'
 const PokemonCard = ({pokemon}) => {
   return (
   
-    <div>
-      <p>{pokemon.name}</p>
+    <div className='pokemon-container'>
+      <p className='pokemon-name'>{pokemon.name}</p>
     </div>)
  
   
