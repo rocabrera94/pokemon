@@ -1,84 +1,41 @@
-import { useState, useEffect } from 'react'
 import './App.css'
-import PokemonList from './components/PokemonList'
-import {useFetch} from './utils/useFetch'
+import { useState, useEffect } from 'react'
 
 
 
+export default function App() {
+  const [data, setData] = useState([]);
+  const getPokemon = () => {
+    let arr = [];
+    for (let i = 1; i < 21; i++) {
+      fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+        .then((res) => res.json())
+        .then((data) => {
+          arr.push(data);
+          setData(arr);
+        });
+    }
+  };
 
+  /*const fetchPokemons = async () => {
+    let arr = [];
+    for (let i = 1; i < 21; i++) {
+      let a = [getPokemon(i)];
+      setData([...a]);
+    }
+  };*/
 
-function App() {
-  /*
-  const [pokemons, setPokemons] = useState([])
-  const [loading, setLoading] = useState(false)
-  const [poke, setPoke] = useState([])
-  const fetchPokemonList = () =>{
-    setLoading(false)
-    fetch(`https://pokeapi.co/api/v2/pokemon/`)
-    .then((response)=>response.json())
-    .then((data)=>{
-      setPokemons(data)
-      })
-
-      
-      
+  useEffect(() => {
+    getPokemon();
+  }, []);
+  return (
+    <div className="App">
+      <h1>
+        {data.map((pokemon) => {
+          return <div key={pokemon.id}>{pokemon.name}</div>;
+        })}
+      </h1>
+      <button onClick={() => console.log(data)}>see</button>
+    </div>
+  );
 }
-let arr = []
-const waitFetch = ()=>{
-  if (pokemons){
-  for (let i=0;i<20;i++){
-   // console.log('aca pokemons es', pokemons)
-    arr.push(pokemons.results[i])
-    setPoke(arr)
-    
-}
-  }}
-  useEffect(()=>{
-  fetchPokemonList()
-  
-  },[])
-
-  setTimeout(waitFetch, 1500)
-  
-  */
-  const [pokemons, setPokemons] = useState([])
-  
- // const {data, error, isLoading} = useFetch('https://pokeapi.co/api/v2/pokemon/')
- const {data, error, isLoading} = useFetch(`https://pokeapi.co/api/v2/pokemon/`)
-
-  
-  
-  const waitFetch =async ()=>{
-    let arr = []
-    if (data){
-    for (let i=0;i<20;i++){
-      arr.push(data.results[i]) 
-      setPokemons(arr) 
-      }
-    }  
-  } 
-  
-  
-   setTimeout(waitFetch, 100);
-  
-  
-  if (isLoading) return <p>loading</p>;
-  if (error) return <p>error</p>
-
-
-
-return (
-  <div>
-    <h1>Pokemons</h1>
-    <button onClick={()=>console.log(pokemons)}>clic</button>
-    
-    
-    
-    <PokemonList pokemons={pokemons}/>
-  </div>
-)
- 
-     
-}
-
-export default App
