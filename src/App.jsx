@@ -1,6 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react'
-
+import PokemonList from './components/PokemonList'
 
 
 export default function App() {
@@ -30,11 +30,7 @@ export default function App() {
   }, []);
   return (
     <div className="App">
-      <h1>
-        {data.map((pokemon) => {
-          return <div key={pokemon.id}>{pokemon.name}</div>;
-        })}
-      </h1>
+      <PokemonList pokemons={data} />
       <button onClick={() => console.log(data)}>see</button>
     </div>
   );
