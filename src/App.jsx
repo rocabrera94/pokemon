@@ -1,7 +1,7 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import PokemonList from './components/PokemonList'
-
+import pokemonLogo from './assets/logo.png'
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -30,7 +30,7 @@ export default function App() {
   }, []);
   return (
     <div className="App">
-      <h1>POKEMONS</h1>
+      <img src={pokemonLogo} alt='pokemon' className='pokemon-logo'></img>
       <PokemonList pokemons={data} />
       <button onClick={() => console.log(data)}>see</button>
     </div>
