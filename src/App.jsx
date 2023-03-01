@@ -30,6 +30,7 @@ export default function App() {
   }, []);
   return (
     <div className="App">
+      <h1>POKEMONS</h1>
       <PokemonList pokemons={data} />
       <button onClick={() => console.log(data)}>see</button>
     </div>
