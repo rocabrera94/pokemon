@@ -8,7 +8,9 @@ const PokemonCard = ({pokemon}) => {
       <p className='pokemon-name'>{pokemon.name}</p>
       <p className='pokemon-id'>id: {pokemon.id}</p>
       <p className='pokemon-type'>type: {pokemon.types[0].type.name}</p>
-    </div>)
+      <button className='see-more' >see more</button>
+    </div>
+    )
  
   
 

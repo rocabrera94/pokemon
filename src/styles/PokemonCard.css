@@ -2,11 +2,14 @@
     border: 1px solid transparent;
     border-radius: 3px;
     width: 10rem;
-    height: 15rem;
+    cursor: pointer;
     background-color: rgb(119, 199, 226);
     padding: 0.5rem;
+    transition: transform 0.5s;
 }
-
+.pokemon-container:hover{
+    transform: scale(1.05);
+}
 .pokemon-img{
     margin-top: 0.5rem;
     border: 1px solid transparent;
