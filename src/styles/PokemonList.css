@@ -1,6 +1,6 @@
 .list-container{
     width: 70vw;
-    border: 1px solid black;
+    border: 1px solid #FFF;
     display: grid;
     border-radius: 15px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -10,4 +10,5 @@
     justify-items: center;
     align-items: stretch;
     padding: 20px 0px;
+    background-color: #fff;
 }
