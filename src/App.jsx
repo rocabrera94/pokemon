@@ -32,7 +32,7 @@ export default function App() {
     <div className="App">
       <img src={pokemonLogo} alt='pokemon' className='pokemon-logo'></img>
       <PokemonList pokemons={data} />
-      <button onClick={() => console.log(data)}>see</button>
+      
     </div>
   );
 }
