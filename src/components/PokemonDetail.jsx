@@ -7,8 +7,10 @@ export function PokemonDetail() {
     return (
         <>
             <div className="container">
-                <p className="name">{location.state.name}</p>
-                <img src={location.state.sprites.other.dream_world.front_default} alt='pokemon image' className="image" />
+                <div className="main">
+                    <p className="name">{location.state.name}</p>
+                    <img src={location.state.sprites.other.dream_world.front_default} alt='pokemon image' className="image" />
+                </div>
                 <div className="data">
                     <p>{location.state.id}</p>
                     <p>{location.state.types[0].type.name}</p>

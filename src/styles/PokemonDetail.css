@@ -1,0 +1,24 @@
+.container{
+    border: 1px solid black;
+    width: 55vw;
+    display: flex;
+    height: fit-content;
+    background-color: #FFF;
+}
+
+.main{
+    border: 1px solid red;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.main .name {
+    font-size: 3rem;
+    font-weight: bold;
+    
+}
+
+
