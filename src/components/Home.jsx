@@ -2,6 +2,7 @@ import '../styles/Home.css'
 import { useState, useEffect } from 'react'
 import PokemonList from './PokemonList'
 import pokemonLogo from '../assets/logo.png'
+import Header from './Header';
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -29,7 +30,8 @@ export default function Home() {
     getPokemon();
   }, []);
   return (
-    <div>
+    <div className='home-container'>
+      <Header />
       <img src={pokemonLogo} alt='pokemon' className='pokemon-logo'></img>
       <PokemonList pokemons={data} />
       
