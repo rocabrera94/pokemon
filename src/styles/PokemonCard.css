@@ -40,3 +40,14 @@
     font-size: 1rem;
     font-weight: 500;
 }
+
+.see-more{
+    background-color: rgb(21, 235, 235);
+    color: black;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 0 10px;
+    height: 1.5rem;
+}
